@@ -1,0 +1,16 @@
+
+---
+# This playbook prints a simple debug message
+- name: Echo 
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+  - name: JAVA installation
+    debug:
+      msg: Downloaded JAVA JDK!
+  - name: Installing JAVA 
+    command: sleep 15
+  - name: Checking JAVA Version
+    debug:
+      msg: JAVA installation successful

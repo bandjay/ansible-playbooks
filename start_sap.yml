@@ -1,0 +1,19 @@
+
+---
+# This playbook prints a simple debug message
+- name: Echo 
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+  - name: Download SAP
+    debug:
+      msg: Obtained SAP distribution successfully !
+  - name: Check all dependencies
+    debug:
+      msg: JAVA and Tomcat are running
+  - name: Installing SAP server
+    command: sleep 50
+  - name: start SAP server
+    debug:
+      msg: SAP is started and running !

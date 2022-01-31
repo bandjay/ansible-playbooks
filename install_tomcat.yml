@@ -1,0 +1,16 @@
+
+---
+# This playbook prints a simple debug message
+- name: Echo 
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+  - name: Tomcat installation
+    debug:
+      msg: Downloaded Apache tomcat
+  - name: Installing tomcat
+    command: sleep 20
+  - name: Checking tomcat Version
+    debug:
+      msg: Tomcat server is running!
