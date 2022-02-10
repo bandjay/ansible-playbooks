@@ -13,13 +13,15 @@
     debug:
       msg: All dependent servers responded 
   - name: Stop application nodes
-    #command: sleep 10
+    command: sleep 10
+  - name: Check application nodes status
     debug:
       msg: App server nodes are stopped
   - name: Update app configurations
     debug:
       msg: New app configurations are set
   - name: Re-starting application nodes
-    #command: sleep 10
+    command: sleep 10
+  - name: Run application nodes status
     debug:
       msg: App server nodes restarted and running
