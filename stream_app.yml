@@ -1,0 +1,25 @@
+
+---
+# This playbook prints a simple debug message
+- name: Echo 
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+  - name: Check application liveness probe
+    debug:
+      msg: App is running and live
+  - name: Ping dependency servers 
+    debug:
+      msg: All dependent servers responded 
+  - name: Stop application nodes
+    command: sleep 10
+    debug:
+      msg: App server nodes are stopped
+  - name: Update app configurations
+    debug:
+      msg: New app configurations are set
+  - name: Re-starting application nodes
+    command: sleep 10
+    debug:
+      msg: App server nodes restarted and running

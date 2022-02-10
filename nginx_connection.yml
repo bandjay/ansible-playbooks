@@ -1,0 +1,28 @@
+
+---
+# This playbook prints a simple debug message
+- name: Echo 
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+  - name: Check Nginx server liveness probe
+    debug:
+      msg: Nginx server is running
+  - name: Check workers status
+    command: sleep 10
+    debug:
+      msg: All workers are active and up
+  - name: Perform error log checking
+    command: sleep 10
+    debug:
+      msg: Error log analysed and no failures identified
+  - name: Increase max number of connections
+    command: sleep 5
+    debug:
+      msg: Server connection limit is increased
+  - name: Check for cache size increment
+    command: sleep 5
+    debug:
+      msg: Cache size increased for performance.
+#extra_args: max_conns , limit_rate , caching 

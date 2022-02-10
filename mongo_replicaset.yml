@@ -1,0 +1,30 @@
+
+---
+# This playbook prints a simple debug message
+- name: Echo 
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+  - name: Check MongoDB liveness probe
+    debug:
+      msg: MongoDB is running...
+  - name: Check Replication lag
+    command: sleep 5
+    debug:
+      msg: Higher replication lag observed
+  - name: Check the size of Oplog
+    command: sleep 10
+    debug:
+      msg: Oplog size is sufficient
+  - name: Run MongoDB latency tests
+    command: sleep 10
+      debug:
+        msg: High Mongo DB latency detected
+  - name: Increase the replica set count
+    command: sleep 5
+    debug:
+      msg: Replica set member count increased successfully.
+
+
+#extra_vars: replica-set members,datacenter-geo
