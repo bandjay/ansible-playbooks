@@ -11,18 +11,20 @@
       msg: MongoDB is running...
   - name: Check Replication lag
     command: sleep 5
+  - name: Replication lag status
     debug:
       msg: Higher replication lag observed
   - name: Check the size of Oplog
-    command: sleep 10
     debug:
       msg: Oplog size is sufficient
   - name: Run MongoDB latency tests
     command: sleep 10
-      debug:
-        msg: High Mongo DB latency detected
+  - name: MongoDB latency test status
+    debug:
+      msg: High Mongo DB latency detected
   - name: Increase the replica set count
     command: sleep 5
+  - name: Replica set increment status
     debug:
       msg: Replica set member count increased successfully.
 
