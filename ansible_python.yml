@@ -1,0 +1,14 @@
+
+---
+# This playbook prints a simple debug message
+- name: Echo 
+  hosts: 127.0.0.1
+  connection: local
+
+  tasks:
+  - name: Run python from ansible
+    command: python /root/ansible_playbooks/hello.py
+    register: py_out
+  - name: Checking python output
+    debug: 
+      var: py_out.stdout
